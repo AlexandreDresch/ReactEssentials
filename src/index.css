@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Karantina:wght@300;400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,9 @@
 @layer base {
   :root {
     --font-inter: "Inter", sans-serif;
+    --font-karantina: "Karantina", sans-serif;
+    --font-josefin: "Josefin Sans", sans-serif;
+    --font-jost: "Jost", sans-serif;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -34,7 +37,6 @@
     --radius: 0.5rem;
   }
   .dark {
-    --font-inter: "Inter", sans-serif;
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
