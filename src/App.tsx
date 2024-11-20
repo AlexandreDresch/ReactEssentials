@@ -1,9 +1,9 @@
-import Header from "./components/header";
+import Routes from "./routes/routes";
 
 export default function App() {
   return (
     <>
-      <Header />
+      <Routes />
     </>
-  )
+  );
 }
