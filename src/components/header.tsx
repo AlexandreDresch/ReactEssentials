@@ -53,7 +53,7 @@ export default function Header() {
 
             <a
               href="/"
-              className="flex items-center"
+              className="flex items-center px-12"
             >
               <img src="./react.svg" alt="React Essentials - Home" />
             </a>
