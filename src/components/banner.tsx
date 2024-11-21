@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export default function Banner({ title }: { title: string }) {
   return (
-    <section className="text-white font-karantina flex flex-col items-center justify-around w-full h-full min-h-[500px] relative max-w-5xl pb-10">
+    <section className="text-white font-karantina flex flex-col items-center justify-around size-full min-h-[500px] relative max-w-6xl pb-10">
       <img
         src="./polygons-1.svg"
         alt="Polygons"

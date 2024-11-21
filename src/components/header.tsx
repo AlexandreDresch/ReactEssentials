@@ -28,14 +28,14 @@ export default function Header() {
   }
 
   return (
-    <div className="fixed w-full top-0 z-50 bg-black text-white">
-      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
+    <header className="fixed w-full top-0 z-50 bg-black text-white flex justify-center">
+      <div className="flex items-center justify-between px-5 lg:px-0 max-lg:py-4 max-w-6xl w-full">
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } fixed top-[5rem] left-0 right-0 bottom-0 lg:static lg:flex lg:mx-auto lg: bg-transparent`}
+          } fixed top-[5rem] left-0 right-0 bottom-0 lg:static lg:flex w-full max-w-6xl lg: bg-transparent`}
         >
-          <div className="relative z-2 flex flex-col items-center justify-between m-auto lg:flex-row">
+          <div className="relative z-2 flex flex-col w-full max-w-6xl items-center justify-between bg-black lg:flex-row">
             {navigation.slice(0, 2).map((item) => (
               <a
               key={item.id}
@@ -79,6 +79,6 @@ export default function Header() {
           <MenuIcon />
         </Button>
       </div>
-    </div>
+    </header>
   );
 }

@@ -28,12 +28,12 @@ export default function ImageCarousel() {
   }, [api]);
 
   return (
-    <div className="mx-auto max-w-5xl">
-      <Carousel setApi={setApi} className="w-full max-w-5xl">
+    <div className="mx-auto max-w-6xl w-full">
+      <Carousel setApi={setApi}>
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
-              <Card className="rounded-none bg-slate-600 border-none">
+              <Card className="rounded-none bg-slate-600/10 border-none">
                 <CardContent className="flex aspect-video items-center justify-center p-6 rounded-none">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>
