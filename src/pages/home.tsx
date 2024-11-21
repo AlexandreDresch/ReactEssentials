@@ -1,4 +1,5 @@
 import Banner from "@/components/banner";
+import Heading from "@/components/heading";
 import ImageCarousel from "@/components/image-carousel";
 import Layout from "@/components/layout";
 import { Separator } from "@/components/ui/separator";
@@ -8,7 +9,7 @@ export default function Home() {
     <Layout>
       <Banner title="Essentials" />
 
-      <section className="text-white flex max-w-5xl flex-col md:flex-row">
+      <section className="text-white flex max-w-6xl flex-col md:flex-row w-full">
         <div>
           <h3 className="font-jost tracking-widest text-xl">
             We are React Essentials
@@ -41,12 +42,40 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
-        <h3 className="font-bold text-white text-7xl sm:text-8xl md:text-9xl lg:text-[200px] text-center pt-10 uppercase">
-          The Base
-        </h3>
+      <section className="pt-10 w-full">
+        <Heading title="Base" />
 
         <ImageCarousel />
+      </section>
+
+      <section className="py-10 w-full flex flex-col items-center">
+        <Heading title="Topics" link="/" />
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full max-w-6xl">
+          <div className="grid gap-2 w-full">
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+          </div>
+
+          <div className="grid gap-2">
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+          </div>
+
+          <div className="grid gap-2">
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto"></div>
+          </div>
+
+          <div className="grid gap-2">
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto"></div>
+          </div>
+        </div>
       </section>
     </Layout>
   );
