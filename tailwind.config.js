@@ -16,6 +16,7 @@ module.exports = {
         karantina: ["var(--font-karantina)", ...fontFamily.sans],
         josefin: ["var(--font-josefin)", ...fontFamily.sans],
         jost: ["var(--font-jost)", ...fontFamily.sans],
+        saira: ["var(--font-saira)", ...fontFamily.sans],
       },
       colors: {
         background: "hsl(var(--background))",
