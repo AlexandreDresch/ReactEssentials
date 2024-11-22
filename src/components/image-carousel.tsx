@@ -28,7 +28,7 @@ export default function ImageCarousel() {
   }, [api]);
 
   return (
-    <div className="mx-auto max-w-6xl w-full">
+    <div className="mx-auto lg:max-w-6xl w-full">
       <Carousel setApi={setApi}>
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
