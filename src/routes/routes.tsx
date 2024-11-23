@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes as Switch } from "react-router-dom";
 import Home from "@/pages/home";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Guides from "@/pages/guides";
 
 export default function Routes() {
   return (
@@ -9,7 +10,7 @@ export default function Routes() {
       <Header />
       <Switch>
         <Route element={<Home />} path="/" />
-        {/* <Route element={<Tutorials />} path="/tutorial/:id" /> */}
+        <Route element={<Guides />} path="/guide/:slug" />
       </Switch>
       <Footer />
     </BrowserRouter>
