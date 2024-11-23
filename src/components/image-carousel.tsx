@@ -35,7 +35,7 @@ export default function ImageCarousel() {
             <CarouselItem key={index}>
               <Card className="rounded-none bg-slate-600/10 border-none">
                 <CardContent className="flex aspect-video items-center justify-center p-6 rounded-none">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                  <span className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">Coming Soon</span>
                 </CardContent>
               </Card>
             </CarouselItem>
