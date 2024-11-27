@@ -108,3 +108,36 @@ export const reactHooks = [
   { name: "useDeferredValue", size: "h-48" },
   { name: "useId", size: "h-48" },
 ];
+
+export const baseLinks = [
+  {
+    id: "0",
+    image: "/carousel/functional-components.png",
+    slug: "functional-components",
+  },
+  {
+    id: "1",
+    image: "carousel/jsx.png",
+    slug: "jsx",
+  },
+  {
+    id: "2",
+    image: "carousel/usestate.png",
+    slug: "usestate",
+  },
+  {
+    id: "3",
+    image: "carousel/useeffect.png",
+    slug: "useeffect",
+  },
+  {
+    id: "4",
+    image: "carousel/props.png",
+    slug: "props",
+  },
+  {
+    id: "5",
+    image: "carousel/reactivity.png",
+    slug: "reactivity",
+  },
+];
