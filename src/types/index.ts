@@ -22,3 +22,9 @@ export interface IRoadmapItem {
   description: string;
   orientation: "left" | "right";
 }
+
+export interface IHook {
+  name: string;
+  slug: string;
+  size: string;
+}

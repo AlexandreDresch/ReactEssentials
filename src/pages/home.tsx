@@ -1,9 +1,11 @@
 import Banner from "@/components/banner";
 import Heading from "@/components/heading";
+import HookItem from "@/components/hook-item";
 import ImageCarousel from "@/components/image-carousel";
 import Layout from "@/components/layout";
 import Roadmap from "@/components/roadmap";
 import { Separator } from "@/components/ui/separator";
+import { reactHooks } from "@/constants";
 
 export default function Home() {
   return (
@@ -56,75 +58,27 @@ export default function Home() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full max-w-6xl">
           <div className="grid gap-2 w-full">
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useState
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useEffect
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useContext
-              </p>
-            </div>
+            {reactHooks[0].map((hook) => (
+              <HookItem hook={hook} key={hook.name} />
+            ))}
           </div>
 
           <div className="grid gap-2">
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useReducer
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useRef
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useMemo
-              </p>
-            </div>
+            {reactHooks[1].map((hook) => (
+              <HookItem hook={hook} key={hook.name} />
+            ))}
           </div>
 
           <div className="grid gap-2">
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useCallback
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useLayoutEffect
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useImperativeHandle
-              </p>
-            </div>
+            {reactHooks[2].map((hook) => (
+              <HookItem hook={hook} key={hook.name} />
+            ))}
           </div>
 
           <div className="grid gap-2">
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-96 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useTransition
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useDeferredValue
-              </p>
-            </div>
-            <div className="bg-slate-600/10 border-[1px] border-slate-600 h-48 w-auto flex items-center justify-center">
-              <p className="text-slate-400 font-saira font-extralight tracking-widest text-2xl">
-                useId
-              </p>
-            </div>
+            {reactHooks[3].map((hook) => (
+              <HookItem hook={hook} key={hook.name} />
+            ))}
           </div>
         </div>
       </section>

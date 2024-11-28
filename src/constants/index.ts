@@ -95,18 +95,26 @@ export const roadmapItems = [
 ];
 
 export const reactHooks = [
-  { name: "useState", size: "h-96" },
-  { name: "useEffect", size: "h-48" },
-  { name: "useContext", size: "h-48" },
-  { name: "useReducer", size: "h-48" },
-  { name: "useRef", size: "h-96" },
-  { name: "useMemo", size: "h-48" },
-  { name: "useCallback", size: "h-48" },
-  { name: "useLayoutEffect", size: "h-48" },
-  { name: "useImperativeHandle", size: "h-96" },
-  { name: "useTransition", size: "h-96" },
-  { name: "useDeferredValue", size: "h-48" },
-  { name: "useId", size: "h-48" },
+  [
+    { name: "useState", slug: "usestate", size: "h-96" },
+    { name: "useEffect", slug: "useeffect", size: "h-48" },
+    { name: "useContext", slug: "usecontext", size: "h-48" },
+  ],
+  [
+    { name: "useReducer", slug: "usereducer", size: "h-48" },
+    { name: "useRef", slug: "useref", size: "h-96" },
+    { name: "useMemo", slug: "usememo", size: "h-48" },
+  ],
+  [
+    { name: "useCallback", slug: "usecallback", size: "h-48" },
+    { name: "useLayoutEffect", slug: "uselayouteffect", size: "h-48" },
+    { name: "useImperativeHandle", slug: "useimperativehandle", size: "h-96" },
+  ],
+  [
+    { name: "useTransition", slug: "usetransition", size: "h-96" },
+    { name: "useDeferredValue", slug: "usedeferredvalue", size: "h-48" },
+    { name: "useId", slug: "useid", size: "h-48" },
+  ],
 ];
 
 export const baseLinks = [
