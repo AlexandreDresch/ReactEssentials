@@ -9,7 +9,9 @@ export default function Banner({ title }: { title: string }) {
         className="w-full max-w-56 absolute bottom-20 left-5"
       />
 
-      <h2 className="font-bold text-7xl sm:text-8xl md:text-9xl lg:text-[200px] text-center pt-10 uppercase">{title}</h2>
+      <h2 className="font-bold text-7xl sm:text-8xl md:text-9xl lg:text-[200px] text-center pt-10 uppercase">
+        {title}
+      </h2>
 
       <img
         src="/polygons-2.svg"
@@ -17,11 +19,13 @@ export default function Banner({ title }: { title: string }) {
         className="w-full max-w-56 absolute top-0 right-5"
       />
 
-      <Button className="flex flex-col h-auto bg-transparent p-0">
-        <img src="/mouse.svg" className="size-20"/>
+      {title !== "404" && (
+        <Button className="flex flex-col h-auto bg-transparent p-0">
+          <img src="/mouse.svg" className="size-20" />
 
-        <p className="font-josefin font-light">Scroll Down</p>
-      </Button>
+          <p className="font-josefin font-light">Scroll Down</p>
+        </Button>
+      )}
     </section>
   );
 }
