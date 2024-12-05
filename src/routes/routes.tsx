@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Guides from "@/pages/guides";
 import NotFound from "@/pages/not-found";
+import Tutorials from "@/pages/tutorials";
 
 export default function Routes() {
   return (
@@ -12,6 +13,7 @@ export default function Routes() {
       <Switch>
         <Route element={<Home />} path="/" />
         <Route element={<Guides />} path="/guide/:slug" />
+        <Route element={<Tutorials />} path="/tutorial/:slug" />
         <Route path="*" element={<NotFound/>} />
       </Switch>
       <Footer />
