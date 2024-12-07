@@ -1,6 +1,7 @@
 export const tutorials = {
   functionalComponents: {
     title: "Functional Components",
+    slug: "functional-components",
     intro: `
         Welcome to the world of React Functional Components—shiny new toys of React that people won't stop gushing about. 
         Gone are the days of class components (unless you’re a dinosaur, no offense). Let’s dive into why functional components 
@@ -152,9 +153,9 @@ export const tutorials = {
       },
     ],
   },
-
   jsx: {
     title: "Understanding JSX",
+    slug: "jsx",
     intro: `
           Ah, JSX—React's lovechild with XML. If you've ever thought, "Why does my JavaScript look like HTML?" 
           you're not alone. JSX makes your code look pretty, but only if you play by its rules. Let’s break it down 
@@ -337,9 +338,9 @@ export const tutorials = {
       },
     ],
   },
-
   useState: {
     title: "Mastering useState: React's Favorite Hook",
+    slug: "usestate",
     intro: `
       If React components were a reality show, \`useState\` would be the one constantly stealing the spotlight.  
       It’s the OG hook, the one that makes functional components actually *functional*.  
@@ -507,9 +508,9 @@ export const tutorials = {
       },
     ],
   },
-
   useEffect: {
     title: "Mastering useEffect: The Swiss Army Knife of React Hooks",
+    slug: "useeffect",
     intro: `
       \`useEffect\` is that friend who shows up everywhere and does everything.  
       Need to fetch data? useEffect. Need to update the DOM? useEffect.  
@@ -687,6 +688,323 @@ export const tutorials = {
           \`useEffect\` is like a Swiss Army knife: incredibly versatile, but easy to misuse.  
           Learn to wield it wisely, and you’ll be a React pro in no time.  
           Or don’t, and prepare for a career in bug squashing. Either way, happy coding!`,
+      },
+    ],
+  },
+  props: {
+    title: "Props: React’s Passive-Aggressive Way of Sharing Data",
+    slug: "props",
+    intro: `
+      Props (short for properties, because React devs love abbreviations) are the bread and butter of React.  
+      They let you pass data from parent components to child components.  
+      Think of it as giving your child instructions, which they will completely ignore unless they’re coded correctly.`,
+    sections: [
+      {
+        title: "What Are Props?",
+        content: `
+          Props are immutable objects used to pass data from a parent component to its child components.  
+          Immutable means, once they’re passed down, the child can’t change them.  
+          (Basically, the child gets no say in what you hand over. Parenting win!)`,
+        examples: [
+          {
+            title: "Basic Props Example",
+            code: `
+              const Greeting = (props) => {
+                return <h1>Hello, {props.name}!</h1>;
+              };
+
+              const App = () => {
+                return <Greeting name="World" />;
+              };
+
+              // Output: Hello, World!
+            `,
+          },
+        ],
+      },
+      {
+        title: "How to Use Props",
+        subSections: [
+          {
+            title: "Passing Props",
+            content: `
+              You pass props to a child component the same way you pass snacks to a grumpy toddler—reluctantly but necessarily.  
+              Use attributes when rendering the component.`,
+            examples: [
+              {
+                title: "Props in Action",
+                code: `
+                  const UserInfo = (props) => {
+                    return <p>{props.name} is {props.age} years old.</p>;
+                  };
+
+                  const App = () => {
+                    return <UserInfo name="Alice" age={25} />;
+                  };
+
+                  // Output: Alice is 25 years old.
+                `,
+              },
+            ],
+          },
+          {
+            title: "Destructuring Props",
+            content: `
+              Destructuring is the grown-up way to handle props.  
+              No more \`props.something\`—just extract what you need.`,
+            examples: [
+              {
+                title: "Destructured Props",
+                code: `
+                  const UserInfo = ({ name, age }) => {
+                    return <p>{name} is {age} years old.</p>;
+                  };
+
+                  const App = () => {
+                    return <UserInfo name="Bob" age={30} />;
+                  };
+
+                  // Output: Bob is 30 years old.
+                `,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Prop Types",
+        content: `
+          Want to enforce rules for props? Enter \`PropTypes\`.  
+          They're the parent chaperone of your React app—making sure everything behaves.  
+          This isn’t mandatory, but neither is stopping at red lights, and yet here we are.`,
+        examples: [
+          {
+            title: "Using PropTypes",
+            code: `
+              import PropTypes from 'prop-types';
+
+              const UserInfo = ({ name, age }) => {
+                return <p>{name} is {age} years old.</p>;
+              };
+
+              UserInfo.propTypes = {
+                name: PropTypes.string.isRequired,
+                age: PropTypes.number.isRequired,
+              };
+
+              const App = () => {
+                return <UserInfo name="Charlie" age={35} />;
+              };
+            `,
+          },
+        ],
+      },
+      {
+        title: "Default Props",
+        content: `
+          Forget to pass a prop? React won’t call you out, but your app will break.  
+          Thankfully, you can define \`defaultProps\` to handle missing props like a pro.`,
+        examples: [
+          {
+            title: "Setting Default Props",
+            code: `
+              const Greeting = ({ name = 'Stranger' }) => {
+                return <h1>Hello, {name}!</h1>;
+              };
+
+              const App = () => {
+                return <Greeting />;
+              };
+
+              // Output: Hello, Stranger!
+            `,
+          },
+        ],
+      },
+      {
+        title: "Children Props",
+        content: `
+          The \`children\` prop is a special kind of prop that lets you nest components.  
+          It’s like handing your child a box of crayons and hoping they create art instead of chaos.`,
+        examples: [
+          {
+            title: "Using children Prop",
+            code: `
+              const Card = ({ children }) => {
+                return <div className="card">{children}</div>;
+              };
+
+              const App = () => {
+                return (
+                  <Card>
+                    <h2>Welcome!</h2>
+                    <p>This is a nested component.</p>
+                  </Card>
+                );
+              };
+
+              // Output:
+              // <div class="card">
+              //   <h2>Welcome!</h2>
+              //   <p>This is a nested component.</p>
+              // </div>
+            `,
+          },
+        ],
+      },
+      {
+        title: "Final Thoughts",
+        content: `
+          Props are like a pizza delivery guy—you tell them what to bring, they deliver,  
+          but they don’t stick around to mess with your toppings.  
+          Learn to use them wisely, and your React app will thank you (or not, it's just code).`,
+      },
+    ],
+  },
+  reactivity: {
+    title: "Reactivity: Teach Your Code to Pay Attention",
+    slug: "reactivity",
+    intro: `
+      Reactivity is the art of keeping your UI in sync with your data.  
+      Before reactivity, you had to manually update the DOM every time something changed, like a digital caveman.  
+      Now, JavaScript frameworks do the heavy lifting so you can focus on writing bugs faster.`,
+    sections: [
+      {
+        title: "Reactivity in Vanilla JavaScript",
+        content: `
+          Vanilla JavaScript doesn’t have built-in reactivity. Shocker, right?  
+          But we can simulate it with good old getters, setters, and event listeners.  
+          Let’s create a reactive counter manually because we enjoy suffering.`,
+        examples: [
+          {
+            title: "Manual Reactivity Example",
+            code: `
+              const state = {
+                count: 0,
+              };
+
+              const render = () => {
+                document.body.innerHTML = \`Count: \${state.count}\`;
+              };
+
+              const makeReactive = (obj) => {
+                return new Proxy(obj, {
+                  set(target, key, value) {
+                    target[key] = value;
+                    render(); // Update UI
+                    return true;
+                  },
+                });
+              };
+
+              const reactiveState = makeReactive(state);
+
+              render(); // Initial render
+              reactiveState.count = 1; // Updates DOM
+              reactiveState.count = 2; // Updates DOM
+            `,
+          },
+        ],
+      },
+      {
+        title: "Reactivity in React",
+        content: `
+          React takes reactivity and makes it brain-dead simple with hooks like \`useState\`.  
+          Instead of wiring proxies or event listeners, you just tell React what to update and call it a day.`,
+        examples: [
+          {
+            title: "React's useState for Reactivity",
+            code: `
+              import React, { useState } from 'react';
+
+              const Counter = () => {
+                const [count, setCount] = useState(0);
+
+                return (
+                  <div>
+                    <p>Count: {count}</p>
+                    <button onClick={() => setCount(count + 1)}>Increment</button>
+                  </div>
+                );
+              };
+
+              export default Counter;
+
+              // Clicking the button updates the count, triggering a re-render.
+            `,
+          },
+        ],
+      },
+      {
+        title: "Why Reactivity Matters",
+        content: `
+          Without reactivity, you’re left to wrestle the DOM into submission every time data changes.  
+          Reactivity ensures your UI updates automatically without micromanaging the DOM.  
+          Think of it as a well-trained butler, except it never talks back or complains about working overtime.`,
+        examples: [],
+      },
+      {
+        title: "Reactivity in Vue (Bonus Round)",
+        content: `
+          Vue.js takes a different approach using reactive objects.  
+          It wraps your data in a reactivity system right out of the box, no hooks required.`,
+        examples: [
+          {
+            title: "Reactivity in Vue",
+            code: `
+              <template>
+                <div>
+                  <p>Count: {{ count }}</p>
+                  <button @click="increment">Increment</button>
+                </div>
+              </template>
+
+              <script>
+              import { reactive } from 'vue';
+
+              export default {
+                setup() {
+                  const state = reactive({ count: 0 });
+
+                  const increment = () => {
+                    state.count++;
+                  };
+
+                  return { ...state, increment };
+                },
+              };
+              </script>
+
+              // Vue's reactivity system updates the DOM automatically. No sweat.
+            `,
+          },
+        ],
+      },
+      {
+        title: "Advanced Reactivity",
+        subSections: [
+          {
+            title: "Reactivity in Complex State Management",
+            content: `
+              When your app grows beyond counters and simple forms, you'll want something like \`useReducer\`  
+              or a state management library (Redux, Zustand, etc.) to keep your reactive data organized.`,
+            examples: [],
+          },
+          {
+            title: "Reactivity in Context",
+            content: `
+              Reactivity works beautifully with context providers, making data accessible throughout your app.  
+              It’s like global variables, but classy.`,
+            examples: [],
+          },
+        ],
+      },
+      {
+        title: "Final Thoughts",
+        content: `
+          Reactivity turns your app from a static, lifeless page into a dynamic, responsive masterpiece.  
+          Or, if you overdo it, a spaghetti mess of state updates.  
+          Start small, think smart, and remember: just because something can be reactive, doesn’t mean it should be.`,
       },
     ],
   },
